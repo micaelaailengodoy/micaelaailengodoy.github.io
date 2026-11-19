@@ -85,9 +85,10 @@ function openVideoModal(videoId, title, roles) {
     if (titleEl) titleEl.textContent = title || 'Proyecto Audiovisual';
     if (rolesEl) rolesEl.textContent = roles ? `Roles: ${roles}` : '';
 
-    // Autoplay embed URL
-    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+    // Autoplay embed URL with playsinline and modestbranding for smooth hardware playback
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`;
     modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 }
@@ -99,6 +100,7 @@ function closeVideoModal() {
   if (modal && iframe) {
     iframe.src = ''; // Stops video immediately
     modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
 }

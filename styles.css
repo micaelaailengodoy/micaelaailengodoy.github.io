@@ -1163,8 +1163,7 @@ body::after {
   position: absolute;
   height: 24px;
   width: 90px;
-  background: rgba(211, 177, 194, 0.65);
-  backdrop-filter: blur(1px);
+  background: rgba(211, 177, 194, 0.75);
   z-index: 5;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transform: rotate(-4deg);
@@ -1536,7 +1535,7 @@ body::after {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(41, 5, 20, 0.9);
+  background: rgba(24, 3, 12, 0.95);
   border: 1px solid rgba(211, 177, 194, 0.45);
   color: var(--periwinkle-light);
   font-size: 0.7rem;
@@ -1549,7 +1548,6 @@ body::after {
   gap: 7px;
   z-index: 2;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
 }
 
 .laurel-award-badge i {
@@ -2944,15 +2942,15 @@ body::after {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(41, 5, 20, 0.85);
-  backdrop-filter: blur(6px);
+  background: rgba(18, 4, 11, 0.94);
   z-index: 2000;
   display: none;
   align-items: center;
   justify-content: center;
   padding: 24px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
+  transform: translateZ(0);
 }
 
 .modal-backdrop.show {
@@ -2967,10 +2965,11 @@ body::after {
   max-width: 900px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
   position: relative;
   display: flex;
   flex-direction: column;
+  transform: translateZ(0);
 }
 
 .video-modal-dialog {
@@ -3032,6 +3031,8 @@ body::after {
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #000;
+  contain: strict;
+  transform: translateZ(0);
 }
 
 .video-iframe-wrapper iframe {
@@ -3040,6 +3041,8 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
+  border: 0;
+  display: block;
 }
 
 /* Lightbox Modal & Multi-Photo Gallery */
@@ -3086,7 +3089,7 @@ body::after {
   transform: translateY(-50%);
   width: 48px;
   height: 48px;
-  background: rgba(71, 11, 36, 0.85);
+  background: var(--wine);
   color: #ffffff;
   border: 1.5px solid rgba(211, 177, 194, 0.5);
   border-radius: 50%;
@@ -3097,7 +3100,6 @@ body::after {
   cursor: pointer;
   z-index: 20;
   transition: var(--transition-fast);
-  backdrop-filter: blur(6px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -6148,7 +6150,7 @@ body.drawer-open {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(13, 10, 15, 0.75);
+  background: rgba(13, 10, 15, 0.9);
   border: 1px solid rgba(180, 189, 220, 0.4);
   color: var(--periwinkle);
   display: flex;
@@ -6159,8 +6161,6 @@ body.drawer-open {
   opacity: 0;
   transform: scale(0.85);
   transition: opacity 0.25s ease, transform 0.2s ease, background 0.2s ease;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 }
 
 .reel-card.is-playing .youtube-reel-volume-btn {
