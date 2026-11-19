@@ -178,7 +178,6 @@ function initColorGradingSlider() {
   });
 
   // Shot Selector Buttons — scroll carousel
-  const projectLabel = document.getElementById('colorProjectLabel');
   let currentSwitchToken = 0;
 
   shotBtns.forEach(btn => {
@@ -224,14 +223,6 @@ function initColorGradingSlider() {
           sliderBox.classList.remove('is-switching');
         }
       }, 250);
-
-      // projectLabel may not exist in new layout — guard safely
-      if (projectLabel) {
-        const projectText = btn.getAttribute('data-project');
-        if (projectText) {
-          projectLabel.innerHTML = `<i class="fa-solid fa-clapperboard"></i> Proyecto: <strong>${projectText}</strong>`;
-        }
-      }
     });
   });
 }
@@ -637,17 +628,6 @@ function initVerticalReels() {
     }
     card.classList.remove('is-playing');
     card.classList.remove('is-loading');
-  }
-
-  function toggleFullscreen(element) {
-    if (!element) return;
-    if (document.fullscreenElement || document.webkitFullscreenElement) {
-      const exit = document.exitFullscreen || document.webkitExitFullscreen;
-      exit?.call(document);
-      return;
-    }
-    const request = element.requestFullscreen || element.webkitRequestFullscreen;
-    request?.call(element);
   }
 
   // Navigation arrows
